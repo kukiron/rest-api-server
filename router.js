@@ -16,7 +16,7 @@ module.exports = function(app) {
         <div>
           You can see the authorized users' list on <a href="/users">the Users route</a>
         </div>
-        <img style="margin: 30px auto" src="assets/images/welcome.gif" alt="welcome image">
+        <img style="margin: 30px auto" src="./assets/images/welcome.gif" alt="welcome image">
       </div>
     `)
   })
