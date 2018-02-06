@@ -11,7 +11,7 @@ module.exports = function(app) {
   // Sample welcome page
   app.get("/", (req, res) => {
     res.send(`
-      <div style="margin: 30px auto; text-align: center;">
+      <div style="margin: 60px auto; text-align: center;">
         <h4>Hi!  Welcome to the ClayShop REST API.</h4>
         <div>
           You can see the authorized users' list on <a href="/users">the Users route</a>
