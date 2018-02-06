@@ -12,7 +12,7 @@ Once the dependencies are installed, run `npm run dev:server` & the app will be 
 
 ## Set MongoDB
 
-You need to install & configure MongoDB to run this API server from local machine. After installing, run `mongod` from terminal & edit the `server/index.js` file:
+You need to install & configure [MongoDB](https://docs.mongodb.com/manual/installation/) to run this API server from local machine. After installing, run `mongod` from terminal & edit the `server/index.js` file:
 
 ```javascript
 // change the following line
