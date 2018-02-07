@@ -19,16 +19,16 @@ module.exports = function(app) {
     })
   })
 
-  // Get the current user's access level
-  app.get("/user-access", requireAuth, (req, res) => {
-    res.send(req.user.access)
-  })
-
   // Get users list
   app.get("/users", (req, res) => {
     User.find({}, (err, users) => {
       res.send(users)
     })
+  })
+
+  // Get the current user's access level
+  app.get("/user-access", requireAuth, (req, res) => {
+    res.send(req.user.access)
   })
 
   // Login & Signup requests
