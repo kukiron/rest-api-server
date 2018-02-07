@@ -1,4 +1,5 @@
-const passport = require("passport"),
+const path = require("path"),
+  passport = require("passport"),
   Authentication = require("./controllers/authentication"),
   User = require("./models/user")
 
@@ -8,17 +9,14 @@ const requireAuth = passport.authenticate("jwt", { session: false }),
   requireLogin = passport.authenticate("local", { session: false })
 
 module.exports = function(app) {
+  // View engine
+  app.set("view engine", "ejs")
+  app.set("views", path.join(__dirname, "views"))
   // Sample welcome page
   app.get("/", (req, res) => {
-    res.send(`
-      <div style="margin: 60px auto; text-align: center;">
-        <h4>Hi!  Welcome to the ClayShop REST API.</h4>
-        <div>
-          You can see the authorized users' list on <a href="/users">the Users route</a>
-        </div>
-        <img style="margin: 30px auto" src="https://i.imgur.com/eivOA4V.gif" alt="welcome image">
-      </div>
-    `)
+    res.render("index", {
+      title: "ClayShop API"
+    })
   })
 
   // Get the current user's access level

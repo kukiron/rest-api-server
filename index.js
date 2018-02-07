@@ -23,6 +23,9 @@ app.use(bodyParser.json({ type: "*/*" }))
 app.use(cors())
 app.options("*", cors())
 
+// Set up the static file path
+app.use(express.static(__dirname))
+
 router(app)
 
 // Server setup
