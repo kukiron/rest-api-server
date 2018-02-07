@@ -8,7 +8,7 @@ ClayShop.
 Clone the repo & run the command `cd server && npm install` from
 the root directory.
 
-Once the dependencies are installed, run `npm run dev:server` & the app will be served on `localhost:3090`
+Once the dependencies are installed, run `npm run dev:server` & the app will be served at `localhost:3090`
 
 ## Set MongoDB
 
@@ -18,7 +18,7 @@ You need to install & configure [MongoDB](https://docs.mongodb.com/manual/instal
 // change the following line
 mongoose.connect(process.env.MONGODB_URI)
 
-// To the following
+// to the following
 mongoose.connect("mongodb://localhost:your-port/db-name")
 ```
 
