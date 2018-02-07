@@ -11,7 +11,7 @@ const requireAuth = passport.authenticate("jwt", { session: false }),
 module.exports = function(app) {
   // View engine
   app.set("view engine", "ejs")
-  app.set("views", path.join(__dirname, "views"))
+  app.set("views", path.resolve(__dirname, "views"))
   // Sample welcome page
   app.get("/", (req, res) => {
     res.render("index", {
