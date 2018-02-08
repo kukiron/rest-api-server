@@ -1,6 +1,6 @@
 # REST API Server for ClayShop
 
-This is the API server providing the endpoint for user authorization of **ClayShop**, a smart-lock web interface.
+This is the API server providing the endpoint for user authorization of **ClayShop**, a sample smart-lock web interface.
 
 ## Usage
 
