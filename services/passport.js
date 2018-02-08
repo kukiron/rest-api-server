@@ -9,15 +9,12 @@ const { Strategy, ExtractJwt } = PassportJwt
 // Create local strategy
 const localOptions = { usernameField: "email" }
 const localLogin = new LocalStrategy(localOptions, (email, password, done) => {
-  /**
-   * Verify this email & password
-   * call "done" if the credentials are correct
-   */
+  // Verify this email & password call "done" if the credentials are correct
   User.findOne({ email }, (err, user) => {
     if (err) return done(err)
     if (!user) return done(null, false)
 
-    // compare password --> is `password` equal to user.password
+    // compare password --> is `password` equal to user.password?
     user.comparePassword(password, (err, isMatch) => {
       if (err) return done(err)
 
@@ -34,10 +31,7 @@ const jwtOptions = {
 
 // Create JWT strategy
 const jwtLogin = new Strategy(jwtOptions, (payload, done) => {
-  /**
-   * If the user id in the payload exists in our database
-   * call "done" with that user
-   */
+  // If user id in the payload exists in our database call "done" with that user
   User.findById(payload.sub, (err, user) => {
     if (err) return done(err, false)
 

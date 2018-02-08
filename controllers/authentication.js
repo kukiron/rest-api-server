@@ -14,26 +14,20 @@ const tokenForUser = user => {
 }
 
 // If user has email & password auth'd we need to give them a token
-exports.login = function(req, res) {
+exports.login = (req, res) => {
   res.send({ token: tokenForUser(req.user) })
 }
 
 // Signup new users
-exports.signup = function(req, res, next) {
-  const fullname = req.body.fullname,
-    email = req.body.email,
-    password = req.body.password,
-    access = req.body.access
+exports.signup = (req, res, next) => {
+  const { fullname, email, password, access } = req.body
 
   if (!access)
-    return res
-      .status(422)
-      .send({ error: "You must provide access priviledge." })
+    return res.status(422).send({ error: "You must provide access priviledge" })
 
   // see if a user with a given email exists
   User.findOne({ email }, (err, existingUser) => {
     if (err) return next(err)
-
     // if so, return error
     if (existingUser) return res.status(422).send({ error: "Email is in use" })
 
