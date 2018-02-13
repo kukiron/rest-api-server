@@ -44,7 +44,7 @@ exports.signup = (req, res, next) => {
       err
         ? next(err)
         : res.json({
-            message: "Successfully creaed the new user"
+            message: "New user account is successfully creaed"
           })
     })
   })
@@ -59,11 +59,13 @@ exports.delete = (req, res, next) => {
     .exec()
     .then(doc => {
       if (!doc)
-        return res.status(422).send({ error: "The user cannot be found" })
+        return res
+          .status(422)
+          .send({ error: "Bad request! The user cannot be found" })
 
       return res
         .status(200)
-        .send({ success: "The user is successfully deleted" })
+        .send({ success: "The user account is successfully deleted" })
     })
     .catch(err => next(err))
 }
