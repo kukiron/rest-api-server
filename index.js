@@ -33,7 +33,6 @@ const port = process.env.PORT || 3090,
   server = http.createServer(app)
 
 // Listening to the port
-server.listen(
-  port,
+server.listen(port, () => {
   console.log(`🌍 Express server is up and running on port: ${port} 🐎`)
-)
+})
