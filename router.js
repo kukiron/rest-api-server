@@ -35,5 +35,5 @@ module.exports = app => {
   app.post("/signup", Requests.signup)
 
   // Delete an existing user
-  app.delete("/users/:id", Requests.delete)
+  app.delete("/delete", Requests.delete)
 }
