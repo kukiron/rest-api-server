@@ -49,3 +49,21 @@ exports.signup = (req, res, next) => {
     })
   })
 }
+
+// Delete a user by admin
+exports.delete = (req, res, next) => {
+  const { _id } = req.body
+
+  // see if the user with given name exists
+  User.findByIdAndRemove(_id)
+    .exec()
+    .then(doc => {
+      if (!doc)
+        return res.status(422).send({ error: "The user cannot be found" })
+
+      return res
+        .status(200)
+        .send({ success: "The user is successfully deleted" })
+    })
+    .catch(err => next(err))
+}

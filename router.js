@@ -1,6 +1,6 @@
 const path = require("path"),
   passport = require("passport"),
-  Authentication = require("./controllers/authentication"),
+  Requests = require("./controllers/requests"),
   User = require("./models/user")
 
 require("./services/passport")
@@ -31,6 +31,9 @@ module.exports = app => {
   })
 
   // Login & Signup requests
-  app.post("/login", requireLogin, Authentication.login)
-  app.post("/signup", Authentication.signup)
+  app.post("/login", requireLogin, Requests.login)
+  app.post("/signup", Requests.signup)
+
+  // Delete an existing user
+  app.delete("/delete", Requests.delete)
 }
