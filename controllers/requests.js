@@ -52,10 +52,11 @@ exports.signup = (req, res, next) => {
 
 // Delete a user by admin
 exports.delete = (req, res, next) => {
-  const { _id } = req.body
+  console.log(req.params)
+  const { id } = req.params
 
   // see if the user with given name exists
-  User.findByIdAndRemove(_id)
+  User.findByIdAndRemove(id)
     .exec()
     .then(doc => {
       if (!doc)
