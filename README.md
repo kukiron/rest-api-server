@@ -1,6 +1,8 @@
 # REST API Server for ClayShop
 
-This is the API server providing the endpoint for user authorization of **ClayShop**, a sample smart-lock web interface.
+[![Build Status](https://travis-ci.org/kukiron/rest-api-server.svg?branch=github)](https://travis-ci.org/kukiron/rest-api-server) [![Codacy Badge](https://api.codacy.com/project/badge/Grade/ca2077e2db204404af738a55301c8cc6)](https://www.codacy.com/app/kukiron/rest-api-server?utm_source=github.com&utm_medium=referral&utm_content=kukiron/rest-api-server&utm_campaign=Badge_Grade) [![bitHound Dependencies](https://www.bithound.io/github/kukiron/rest-api-server/badges/dependencies.svg)](https://www.bithound.io/github/kukiron/rest-api-server/master/dependencies/npm) [![bitHound Dev Dependencies](https://www.bithound.io/github/kukiron/rest-api-server/badges/devDependencies.svg)](https://www.bithound.io/github/kukiron/rest-api-server/master/dependencies/npm)
+
+This is the API server providing the endpoint for user authorization of **ClayShop**, a sample smart-lock web interface built with react. Check the demo for the front-end app [here](https://clayshop.herokuapp.com).
 
 ## Usage
 
